@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 import { useGlobalContext } from '../context/global';
 import Button from './Button';
 
@@ -35,7 +35,7 @@ function Upload() {
             formData.append('description', e.target.description.value)
             formData.append('video', e.target.video.files[0]);
 
-            const res = await fetch('http://localhost:8000/api/upload', {
+            const res = await fetch('https://video-player-backend-avzh.onrender.com/api/upload', {
                 method: 'POST',
                 body: formData
             })
