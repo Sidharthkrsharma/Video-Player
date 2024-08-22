@@ -35,7 +35,7 @@ function Upload() {
             formData.append('description', e.target.description.value)
             formData.append('video', e.target.video.files[0]);
 
-            const res = await fetch('https://video-player-backend-avzh.onrender.com/api/upload', {
+            const res = await fetch('http://localhost:8000/api/upload', {
                 method: 'POST',
                 body: formData
             })

@@ -19,7 +19,7 @@ const reducer = (state, action) => {
                     ...action.payload.map((video) => {
                         return{
                             ...video,
-                            videoUrl: `https://video-player-backend-avzh.onrender.com/public/videos/${video.filename}`
+                            videoUrl: `http://localhost:8000/public/videos/${video.filename}`
                         }
                     })
                 ]
@@ -44,7 +44,7 @@ export const GlobalProvider = ({children}) => {
     //get videos
     const getAllVideos = async () => {
         try {
-            const res = await fetch('https://video-player-backend-avzh.onrender.com/api/videos');
+            const res = await fetch('http://localhost:8000/api/videos');
             const data = await res.json()
 
             dispatch({type: SET_VIDEOS, payload: data.videos})
